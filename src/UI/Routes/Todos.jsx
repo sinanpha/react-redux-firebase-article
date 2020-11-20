@@ -5,12 +5,14 @@ import { useFirestoreConnect } from "react-redux-firebase";
 import ToDoItem from "../Components/TodoItem";
 
 const Todos = () => {
-  const { displayName, uid } = useSelector((state) => state.firebase.auth);
+  const auth  =  useSelector((state) => state.firebase.auth) ;
+  console.log(auth);
+  const { displayName, uid } = auth;
   useFirestoreConnect({
     collection: `users/${uid}/todos`,
-    storeAs: "todos",
+    storeAs: "todoss",  // todoss là nhãn để gọi 
   });
-  const todos = useSelector((state) => state.firestore.data.todos);
+  const todos = useSelector((state) => state.firestore.data.todoss);  // gọi nhãn dã đặt
   console.log(todos);
   return (
     <div>

@@ -6,7 +6,7 @@ const AddTodo = () => {
   const [presentToDo, setPresentToDo] = useState("");
   const firestore = useFirestore();
   const { uid } = useSelector((state) => state.firebase.auth);
-  console.log(useSelector((state) => state.firebase.auth));
+  // console.log(useSelector((state) => state.firebase.auth));
   const handleChange = ({ currentTarget: { name, value } }) => {
     if (name === "addTodo") {
       setPresentToDo(value);

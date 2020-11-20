@@ -5,6 +5,7 @@ import { useSelector } from "react-redux";
 
 const PrivateRoute = ({ children, ...remainingProps }) => {
     const auth = useSelector(state => state.firebase.auth);
+    // console.log(auth) ;
   return (
     <Route
       {...remainingProps}
