@@ -18,7 +18,7 @@ const AddTodo = () => {
       .collection("users")
       .doc(uid)
       .collection("todos")
-      .add({
+      .add({          // dung set hoặc dùng add , add thì tự động tạo id trả về docref.id
         title: todo,
         isDone: false,
       })
